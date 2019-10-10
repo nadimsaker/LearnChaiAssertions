@@ -1,8 +1,11 @@
 const chai = require("chai");
-
+//expect
 const expect = chai.expect;
-
+//should
 const should = chai.should();
+
+//assert
+const assert = chai.assert;
 
 let a = 1;
 let b = 1;
@@ -11,6 +14,8 @@ let b = 1;
 a.should.be.equals(b);
 
 expect(a).to.be.equals(a);
+
+assert.equal(a, b);
 
 function myObj() {
   return {
@@ -29,7 +34,7 @@ expect(x).to.be.deep.equals(y, "x and y are equal.");
 expect(x)
   .to.be.an("object")
   .and.to.be.deep.equals(y, "x and y are equal.");
-
+assert.deepEqual(x, y);
 // deep equals
 x.should.be.deep.equals(y);
 
@@ -41,3 +46,4 @@ expect(number)
   .and.to.include(3);
 
 number.should.be.an("array").that.include(3);
+assert.isArray(number);
